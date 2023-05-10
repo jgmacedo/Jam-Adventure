@@ -11,48 +11,37 @@ void limparTela() {
     system("clear"); /*Limpar tela no macOS*/ 
 #endif
 }
-
+/*=================================================================================================*/
 void mainMenu() {
     limparTela();
     printf("======= Bem-vindo ao Jam Adventure =======\n\n");
     printf("Esta é uma aventura por João Gabriel Macedo e Matheus Lobo\n");
     printf("\nAproveite nosso jogo e divirta-se!\n\n");
-    printf("           [1] Iniciar Jogo\n");
-    printf("           [2] Carregar Jogo\n");
-    printf("           [3] Criar Personagem\n");
-    printf("           [4] Sair\n\n");
+    printf("           [1] Criar Personagem\n");
+    printf("           [2] Iniciar Jogo\n");
+    printf("           [3] Sair\n");
+
    int menuOption,i;
    scanf("%d", &menuOption  );
-   for ( i = 1 ; i > 4; i++)
-   {
       if (menuOption == 1)
    {
-      printf("opção1");/*código para começar o jogo*/
+      printf("opção1");/*código para criar personagem*/
    }
    else if (menuOption == 2)
    {
-      printf("opção2");/*código para carregar jogo salvo*/
+      printf("opção2");/*código para iniciar o jogo*/
    }
    else if (menuOption == 3)
    {
-      printf("opção3");/*código para criar personagem*/
-   }
-   else if (menuOption == 4)
-   {
-      printf("opção4");
+      printf("opção3");/*código de saida do terminal*/
    }
    else
    {
       printf("Opção invalida!");
    }
    }
+/*=========================================================================*/
    
-   
-      
-
-}
-
-
 int main()
 {
    mainMenu();
