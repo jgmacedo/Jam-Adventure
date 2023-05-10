@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /*Funções para o menu e limpeza do código*/
-void limparTela() {
+void cleanScreen() {
 #ifdef _WIN32
     system("cls"); /*Limpar tela no Windows*/
 #elif __linux__
@@ -13,7 +13,7 @@ void limparTela() {
 }
 /*=================================================================================================*/
 void mainMenu() {
-    limparTela();
+    cleanScreen();
     printf("======= Bem-vindo ao Jam Adventure =======\n\n");
     printf("Esta é uma aventura por João Gabriel Macedo e Matheus Lobo\n");
     printf("\nAproveite nosso jogo e divirta-se!\n\n");
@@ -23,7 +23,7 @@ void mainMenu() {
     printf("(digite a sua escolha)\n");
 
    int menuOption,i;
-   scanf("%d", &menuOption  );
+   scanf("%d", &menuOption);
       if (menuOption == 1)
    {
       characterCreation();/*código para criar personagem*/
@@ -42,7 +42,6 @@ void mainMenu() {
    }
    }
 /*=========================================================================*/
-void characterCreation();
 void characterCreation(){
    limparTela();
    char charName[20];
