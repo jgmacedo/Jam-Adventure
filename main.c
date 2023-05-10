@@ -20,6 +20,7 @@ void mainMenu() {
     printf("           [1] Criar Personagem\n");
     printf("           [2] Iniciar Jogo\n");
     printf("           [3] Sair\n");
+    printf("(digite a sua escolha)\n");
 
    int menuOption,i;
    scanf("%d", &menuOption  );
@@ -41,6 +42,15 @@ void mainMenu() {
    }
    }
 /*=========================================================================*/
+void characterCreation(){
+   char charName[20];
+   printf("qual o nome de seu Personagem?");
+   scanf("%s", &charName);
+}
+
+/*=========================================================================*/
+
+/*Função principal*/
    
 int main()
 {
