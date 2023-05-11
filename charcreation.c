@@ -1,14 +1,15 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(){
    char charName[20], charBio[400];
    int raceNum = 0, alignNum = 0, jobNum = 0, objectiveNum = 0, originNum = 0, sizeNum = 0;
-   {
+   
       /*NAME STRING*/
    
    printf("Qual o nome de seu Personagem?\n\n");
    fgets(charName, 20, stdin);
-   
+   charName[strcspn(charName, "\n")] = '\0';
    printf("\n---------------------\n");
    
    /*RACE*/
@@ -47,7 +48,6 @@ int main(){
    {
    printf("Você tem uma meta e apenas você pode cumpri-la. Qual é sua vontade no reino de Plim Plim?\n\n");
    printf("[1] - Assumir o comando do reino\n[2] - Enriquecer como ninguém\n");
-   printf("[3] - Destruir a raiz do mal para todo o sempre\n\n");
    scanf("%d", &objectiveNum);
    printf("\n---------------------\n");
    }else{
@@ -97,11 +97,8 @@ if (raceNum == 2) { /*anão = não incluir opção 3*/
    printf("\n---------------------\n");
 }
 
-/* Falta adicionar as restrições */
-/* 
-1. Quando um personagem for da raça anão, ele so podera escolher o porte como medio ou pequeno.
-2. Quando um personagem for de alinhamento Bom, ele nao podera escolher a classe Ladino.
-3. Se a classe Ladino for escolhida, o meio em que o personagem vive n˜ao pode ser tribal.
-4. Se o alinhamento do personagem for Mal, ele n˜ao poder´a ter a meta destruir o mal.
-*/
+   printf("Suas opções de personagem foram: \n nome: %s \n raça: %d \n alinhamento: %d\n job: %d\n objetivo: %d\n origem: %d\n tamanho: %d\n história: %s",charName,raceNum,alignNum,jobNum,objectiveNum,originNum,sizeNum, charBio);
+   
+/* restrições adicionadas. agora acusar problema no código caso não sejam escolhidas opções permitidas */
+
 }
