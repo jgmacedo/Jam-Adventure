@@ -5,7 +5,7 @@ int main(){
    char charName[20], charBio[400];
    int raceNum = 0, alignNum = 0, jobNum = 0, objectiveNum = 0, originNum = 0, sizeNum = 0;
    
-      /*NAME STRING*/
+   /*NAME STRING*/
    
    printf("Qual o nome de seu Personagem?\n\n");
    fgets(charName, 20, stdin);
@@ -28,7 +28,7 @@ int main(){
    
    /*JOB TYPE*/
    
-   if (alignNum == 3)/*bom = não incluir opção 3*/
+   if (alignNum == 3) /*bom = não incluir opção 3*/
    {
    printf("Todos em Plim Plim precisam ser treinados em combate. Como você foi treinado?\n\n");
    printf("[1] - Guerreiro, habilidoso com a espada e escudo\n[2] - Mago, inteligente e apto nas artes arcanas\n");
@@ -78,6 +78,7 @@ int main(){
    printf("Todo mundo tem uma história. Qual é a de %s?\n(digite até 400 caracteres)\n\n",charName);
    getchar(); /*Necessário limpar o buffer para a entrada de texto funcionar*/
    fgets(charBio, 400, stdin);
+   charName[strcspn(charBio, "\n")] = '\0';
 
    printf("\n---------------------\n");
 
@@ -98,7 +99,22 @@ if (raceNum == 2) { /*anão = não incluir opção 3*/
 }
 
    printf("Suas opções de personagem foram: \n nome: %s \n raça: %d \n alinhamento: %d\n job: %d\n objetivo: %d\n origem: %d\n tamanho: %d\n história: %s",charName,raceNum,alignNum,jobNum,objectiveNum,originNum,sizeNum, charBio);
+   printf("Você já pode começar o jogo.");
+   printf("Iniciar sua jornada? (digite sim para começar o jogo e não para refazer seu personagem.)");
+   char letsPlay;
+   getchar();
+   
    
 /* restrições adicionadas. agora acusar problema no código caso não sejam escolhidas opções permitidas */
 
-}
+}/*utilizar isso para fazer de novo o personagem caso o usuário queira.*/
+/*  int main(void) {
+
+       while(terminate-condition-is-false) {
+
+           // Do all your stuff inside this loop
+
+      }
+
+      return 0;
+  }*/
