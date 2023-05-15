@@ -2,6 +2,7 @@
 #include <string.h>
 
 int main(){
+   /* -------------------------CRIAÇÃO DE PERSONAGEM----------------------- */
    char charName[20], charBio[400];
    int raceNum = 0, alignNum = 0, jobNum = 0, objectiveNum = 0, originNum = 0, sizeNum = 0;
    
@@ -100,21 +101,8 @@ if (raceNum == 2) { /*anão = não incluir opção 3*/
 
    printf("Suas opções de personagem foram: \n nome: %s \n raça: %d \n alinhamento: %d\n job: %d\n objetivo: %d\n origem: %d\n tamanho: %d\n história: %s",charName,raceNum,alignNum,jobNum,objectiveNum,originNum,sizeNum, charBio);
    printf("Você já pode começar o jogo.");
-   printf("Iniciar sua jornada? (digite sim para começar o jogo e não para refazer seu personagem.)");
+   printf("Iniciar sua jornada? (digite s para começar o jogo e n para refazer seu personagem.)");
    char letsPlay;
    getchar();
    
-   
-/* restrições adicionadas. agora acusar problema no código caso não sejam escolhidas opções permitidas */
-
-}/*utilizar isso para fazer de novo o personagem caso o usuário queira.*/
-/*  int main(void) {
-
-       while(terminate-condition-is-false) {
-
-           // Do all your stuff inside this loop
-
-      }
-
-      return 0;
-  }*/
+}
