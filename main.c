@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-
+/*Variáveis Globais*/
+   char charName[20], charBio[400];
+   char letsPlay;
+   int raceNum = 0, alignNum = 0, jobNum = 0, objectiveNum = 0, originNum = 0, sizeNum = 0;
 /*Funções para o menu e limpeza do código*/
 void cleanScreen() {
 #ifdef _WIN32
@@ -13,6 +15,7 @@ void cleanScreen() {
     system("clear"); /*Limpar tela no macOS*/ 
 #endif
 }
+/*========================================================================*/
 void clearBuffer(){
    char c;
    while ((c = getchar()) != '\n' && c != EOF) { }
@@ -20,9 +23,9 @@ void clearBuffer(){
 /*========================================================================*/
 void charCreation(){
    /* -------------------------CRIAÇÃO DE PERSONAGEM----------------------- */
-   char charName[20], charBio[400];
-   int raceNum = 0, alignNum = 0, jobNum = 0, objectiveNum = 0, originNum = 0, sizeNum = 0;
-   
+   char letsPlay = 0;
+   while (letsPlay != 's')
+   {
    /*NAME STRING*/
    
    printf("Qual o nome de seu Personagem?\n\n");
@@ -117,14 +120,38 @@ if (raceNum == 2) { /*anão = não incluir opção 3*/
 }
 
    printf("Suas opções de personagem foram: \n nome: %s \n raça: %d \n alinhamento: %d\n job: %d\n objetivo: %d\n origem: %d\n tamanho: %d\n história: %s",charName,raceNum,alignNum,jobNum,objectiveNum,originNum,sizeNum, charBio);
-   printf("Você já pode começar o jogo.");
-   printf("Iniciar sua jornada? (digite s para começar o jogo e n para refazer seu personagem.)");
-   char letsPlay;
-   getchar();
+   printf("Você já pode começar o jogo.\n");
+   printf("Iniciar sua jornada?\n(digite s para começar o jogo e n para refazer seu personagem.)\n");
+   
+   clearBuffer();
+   char play;
+   play = getchar(); 
+
+   if (play == 'n')
+   {
+      printf("Vamos criar seu personagem novamente.\n");
+   } else if (play == 's'){
+      letsPlay = 's';
+   }else{
+      printf("Opção inválida");
+   }
+
+   }
+  
 }
 /*=================================================================================================*/
-void mainMenu() {
-    cleanScreen();
+
+/*=========================================================================*/
+
+
+/*Função principal*/
+   
+int main()
+{
+   /* Menu Inicial */
+   
+   cleanScreen();
+   inicio:
     printf("======= Bem-vindo ao Jam Adventure =======\n\n");
     printf("Esta é uma aventura por João Gabriel Macedo e Matheus Lobo\n");
     printf("\nAproveite nosso jogo e divirta-se!\n\n");
@@ -135,48 +162,53 @@ void mainMenu() {
 
    int menuOption;
    scanf("%d", &menuOption);
+   
    switch (menuOption)
    {
    case 1:
       clearBuffer(); /* necessário limpar o buffer do teclado, usar função para limpar o buffer */
       charCreation();
+      
+      goto inicio;
+
    case 2:
-      printf("voce escolheu começar o jogos");
-      break;
+      if (letsPlay == 's'){
+         printf("\nVocê escolheu começar o jogo");  
+      }else{
+         printf("\nCrie seu personagem primeiro\n\n");
+      }
+      goto inicio;
    case 3:
       printf("voce escolheu sair");
-      break;
+      exit(0);
    default:
       printf("Opção inválida.");
       break;
    }
    int i;
+
    scanf("%d", &menuOption);
       if (menuOption == 1)
    {
       charCreation();/*código para criar personagem*/
    }
-   else if (menuOption == 2)
-   {
-      printf("opção2");/*código para iniciar o jogo*/
-   }
-   else if (menuOption == 3)
-   {
-      printf("opção3");/*código de saida do terminal*/
-   }
-   else
-   {
-      printf("Opção invalida!");
-   }
-   }
-/*=========================================================================*/
+      else if (menuOption == 2)
+      {
+         printf("opção2"); /*código para iniciar o jogo*/
 
-
-/*Função principal*/
+      }
+      else if (menuOption == 3)
+      {
+         printf("opção3");/*código de saida do terminal*/
+      }
+      else
+      {
+         printf("Opção invalida!");
+      }
    
-int main()
-{
-   mainMenu();
+   /*Início do jogo*/
+   
+   printf("Você, %s, acorda no reino de PlimPlim, ",charName);
    
    return 0;
 }
