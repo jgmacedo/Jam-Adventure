@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+
 /*Variáveis Globais*/
    char charName[20], charBio[400];
    char letsPlay;
@@ -255,8 +257,37 @@ int main()
    }
 
    /*Início do jogo*/
-   
-   printf("No mundo de Flim Flam, reinos e criaturas fantásticas coexistem, surge uma ameaça sombria que promete\n mergulhar toda a terra na escuridão eterna. O mal se espalha lentamente, corrompendo a natureza, as almas\n e tudo o que toca. ");
-   printf("%s, advindo de %s, não se acovarda e resolve %s",charName, originNumStr,objectiveNumStr);
-   return 0;
+   sleep(3);
+   char carryOne[20];
+   printf("\n\nNo mundo de Flim Flam, reinos e criaturas fantásticas coexistem, surge uma ameaça sombria que promete\nmergulhar toda a terra na escuridão eterna. O mal se espalha lentamente, corrompendo a natureza, as almas\ne tudo o que toca. ");
+   sleep(2);
+   printf("\n%s, advindo de %s, não se acovarda aproveita a oportunidade de %s, já que estava à toa em casa",charName, originNumStr,objectiveNumStr);
+   sleep(2);
+   printf("Para isso, %s, que não é bobo nem nada, traça um plano: \"preciso, primeiro, catar minhas coisas\" ",charName);
+   sleep(2);
+
+   pergunta1:
+   printf("\n\n - O que eu preciso levar?\nEscolha:\nEscova de dentes\nÓculos escuros\nCopo Stanley\n(escreva exatamente como está escrito)");
+   scanf("%s", carryOne);
+   clearBuffer();
+
+    if (strcmp(carryOne, "Escova de dentes") == 0) {
+        printf("\nVocê escolheu escova de dentes.\n");
+        printf("Você recebeu o item: escova de dentes.\n");
+        sleep(2);
+    } else if (strcmp(carryOne, "Óculos escuros") == 0) {
+        printf("\nVocê escolheu óculos escuros.\n");
+        printf("Você recebeu o item: óculos escuros.\n");
+        sleep(2);
+    } else if (strcmp(carryOne, "Copo Stanley") == 0) {
+        printf("\nVocê escolheu copo Stanley.\n");
+        printf("Você recebeu o item: copo Stanley.\n");
+        sleep(2);
+    } else {
+        printf("\nNão entendi. Favor escrever novamente.\n");
+        goto pergunta1;
+    }
+return 0;
 }
+   
+
