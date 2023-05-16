@@ -186,9 +186,78 @@ int main()
    }
    int i;
    
+   /* Transformando escolhas em strings */
+
+   char raceNumStr[10], alignNumStr[10], jobNumStr[10], objectiveNumStr[10], originNumStr[10], sizeNumStr[10];
+   if (raceNum == 1)
+   {
+      char raceNumStr = {"humano"};
+   }else if (raceNum == 2)
+   {
+      char raceNumStr = {"anão"};
+   }else if (raceNum == 3){
+      char raceNumStr = {"elfo"};
+   }
+
+   if (alignNum == 1)
+   {
+      char alignNumStr = {"mal"};
+   }else if (alignNum == 2)
+   {
+      char alignNumStr = {"neutro"};
+   }else if (alignNum == 3)
+   {
+      char alignNumStr = {"bom"};
+   }
+
+   if (jobNum == 1)
+   {
+      char jobNumStr = {"guerreiro"};
+   }else if (jobNum == 2)
+   {
+      char jobNumStr = {"mago"};
+   }else if (jobNum == 3)
+   {
+      char jobNumStr = {"ladino"};
+   }
+   
+   if (objectiveNum == 1)
+   {
+      char objectiveNumStr = {"Assumir o comando do reino"};
+   }else if (objectiveNum == 2)
+   {
+      char objectiveNumStr = {"Enriquecer como ninguém"};
+   }else if (objectiveNum == 3)
+   {
+      char objectiveNumStr = {"Destruir a raiz do mal para todo o sempre"};
+   }
+
+
+   if (originNum == 1)
+   {
+      char originNumStr = {"cidade de Flam Flam"};
+   }else if (originNum == 2)
+   {
+      char originNumStr = {"das planícies rurais de Gub"};
+   }else if (originNum == 3)
+   {
+      char originNumStr = {"das tribos de Jajalajá"};
+   }
+   
+   if (sizeNum == 1)
+   {
+      char sizeNumStr = {"tenho 130 cm de altura"};
+   }else if (sizeNum == 2)
+   {
+      char sizeNumStr = {"tenho 150 cm de altura"};
+   }else if (sizeNum == 3)
+   {
+      char sizeNumStr = {"sou grandão, pô"};
+   }
+
    /*Início do jogo*/
    
-   printf("Você, %s, acorda no reino de PlimPlim, ",charName);
-   
+   printf("No mundo de Flim Flam, reinos e criaturas fantásticas coexistem, surge uma ameaça sombria que promete\n mergulhar toda a terra na escuridão eterna. O mal se espalha lentamente, corrompendo a natureza, as almas\n e tudo o que toca. ");
+   printf("%s, advindo de %s, não se acovarda e resolve ",charName, originNumStr);
    return 0;
 }
