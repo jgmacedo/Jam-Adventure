@@ -49,7 +49,6 @@ int main()
    clearBuffer();
    scanf("%d", &menuOption);
 
-   clearBuffer();
    switch (menuOption)
    {
    case 1:
@@ -158,7 +157,7 @@ int main()
       clearBuffer();
       char play;
       play = getchar(); 
-
+      clearBuffer();
       if (play == 'n')
       {
          printf("\nVamos criar seu personagem novamente.\n\n");
@@ -258,22 +257,24 @@ int main()
 
    /*Início do jogo*/
    sleep(3);
-   char carryOne[20];
-   printf("\n\nNo mundo de Flim Flam, reinos e criaturas fantásticas coexistem, surge uma ameaça sombria que promete\nmergulhar toda a terra na escuridão eterna. O mal se espalha lentamente, corrompendo a natureza, as almas\ne tudo o que toca. ");
+
+   printf("\n\nNo mundo de Flim Flam, onde reinos e criaturas fantásticas coexistem, surge uma ameaça sombria que promete\nmergulhar toda a terra na escuridão eterna. O mal se espalha lentamente, corrompendo a natureza, as almas\ne tudo o que toca. ");
    sleep(2);
-   printf("\n%s, advindo de %s, não se acovarda aproveita a oportunidade de %s, já que estava à toa em casa",charName, originNumStr,objectiveNumStr);
+   printf("\n\n%s, advindo de %s, não se acovarda e aproveita a oportunidade de %s, já que estava à toa em casa. ",charName, originNumStr,objectiveNumStr);
    sleep(2);
    printf("Para isso, %s, que não é bobo nem nada, traça um plano: \"preciso, primeiro, catar minhas coisas\" ",charName);
    sleep(2);
 
    pergunta1:
    printf("\n\n - O que eu preciso levar?\nEscolha:\nEscova de dentes\nÓculos escuros\nCopo Stanley\n(escreva exatamente como está escrito)");
-   scanf("%s", carryOne);
-   clearBuffer();
+   char carryOne[20];
+   fgets(carryOne, 20, stdin);
+   carryOne[strcspn(carryOne, "\n")] = '\0';
 
+   printf("%s",carryOne);
     if (strcmp(carryOne, "Escova de dentes") == 0) {
         printf("\nVocê escolheu escova de dentes.\n");
-        printf("Você recebeu o item: escova de dentes.\n");
+        printf("Não posso %s sem escovar os meus dentes.\n", objectiveNumString);
         sleep(2);
     } else if (strcmp(carryOne, "Óculos escuros") == 0) {
         printf("\nVocê escolheu óculos escuros.\n");
