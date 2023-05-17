@@ -302,8 +302,6 @@ int main()
       printf("\n%scogita o que fazer à respeito da pobre senhora.",charName);
 
       char ladyChoice[20];
-      fgets(ladyChoice, 20, stdin);
-      ladyChoice[strcspn(ladyChoice, "\n")] = '\0';
       
       if (alignNum == 1)
       {
@@ -312,14 +310,20 @@ int main()
       {
          printf("\n\n - O que fazer?\nEscolha:\nDar bom dia para a senhora\nNão fazer nada\n(escreva exatamente como está escrito)");
       }
-      
-      
-      char ladyChoice[20];
       fgets(ladyChoice, 20, stdin);
-      carryOne[strcspn(carryOne, "\n")] = '\0';
+      ladyChoice[strcspn(ladyChoice, "\n")] = '\0';
 
-   
-   
+      if (strcmp(ladyChoice, "Dar bom dia para a senhora") == 0)
+      {
+         printf("\n\nA senhora responde: Bom dia rapaz.");
+      }else if (strcmp(ladyChoice, "Não fazer nada") == 0)
+      {
+         printf("\n\nSua vida continua para o sucesso");
+      }else if (strcmp(ladyChoice, "Chutar") == 0)
+      {
+         printf("\n\n - QUE DELICIA CHUTAR ESSA VÉIA DESGRAÇADA");
+      }
+      
    
 return 0;
 }
