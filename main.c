@@ -273,21 +273,54 @@ int main()
 
    printf("%s",carryOne);
     if (strcmp(carryOne, "Escova de dentes") == 0) {
-        printf("\nVocê escolheu escova de dentes.\n");
-        printf("Não posso %s sem escovar os meus dentes.\n", objectiveNumString);
-        sleep(2);
+      printf(" - Não posso %s sem escovar os meus dentes.\n",objectiveNumStr);
+      printf("\nVocê escolheu escova de dentes.\n");
+      printf(" - Não posso %s sem escovar os meus dentes.\n",objectiveNumStr);
+      sleep(1);
     } else if (strcmp(carryOne, "Óculos escuros") == 0) {
+        printf(" - Preciso estar no hype enquanto estiver tentando %s\n",objectiveNumStr);
         printf("\nVocê escolheu óculos escuros.\n");
-        printf("Você recebeu o item: óculos escuros.\n");
-        sleep(2);
+        sleep(1);
     } else if (strcmp(carryOne, "Copo Stanley") == 0) {
-        printf("\nVocê escolheu copo Stanley.\n");
-        printf("Você recebeu o item: copo Stanley.\n");
-        sleep(2);
+        printf("Vai que eu sinto sede? Não consigo %s com sede\n",objectiveNumStr);
+        printf("\nVocê escolheu o Copo Stanley.\n");
+        sleep(1);
     } else {
         printf("\nNão entendi. Favor escrever novamente.\n");
         goto pergunta1;
     }
+   if (strcmp(carryOne, "Escova de dentes") == 0)
+   {
+      printf("\nAgora, com minha poderosa %s, posso seguir com meu objetivo.\n", carryOne);
+            sleep(1);
+   }else
+   {
+      printf("\nAgora, com meu poderoso %s, posso seguir com meu objetivo.\n", carryOne);
+   }
+      printf("\n - Continuarei minha jornada para %s, vou sair de casa.\n", objectiveNumStr);
+      printf("\nSaindo de sua casa, %s se depara com uma senhora andando pela rua. Ela aparenta estar indo comprar mantimentos para sua pobre família.",charName);
+      printf("\n%scogita o que fazer à respeito da pobre senhora.",charName);
+
+      char ladyChoice[20];
+      fgets(ladyChoice, 20, stdin);
+      ladyChoice[strcspn(ladyChoice, "\n")] = '\0';
+      
+      if (alignNum == 1)
+      {
+         printf("\n\n - O que fazer?\nEscolha:\nDar bom dia para a senhora\nNão fazer nada\nChutar\n(escreva exatamente como está escrito)");
+      }else
+      {
+         printf("\n\n - O que fazer?\nEscolha:\nDar bom dia para a senhora\nNão fazer nada\n(escreva exatamente como está escrito)");
+      }
+      
+      
+      char ladyChoice[20];
+      fgets(ladyChoice, 20, stdin);
+      carryOne[strcspn(carryOne, "\n")] = '\0';
+
+   
+   
+   
 return 0;
 }
    
