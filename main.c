@@ -323,8 +323,6 @@ int main()
       {
          printf("\n\n - QUE DELICIA CHUTAR ESSA VÉIA DESGRAÇADA");
       }
-      
-   
 return 0;
 }
    
