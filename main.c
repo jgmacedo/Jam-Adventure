@@ -224,13 +224,13 @@ int main()
    
    if (objectiveNum == 1)
    {
-      strcpy(objectiveNumStr, "Assumir o comando do reino");
+      strcpy(objectiveNumStr, "assumir o comando do reino");
    }else if (objectiveNum == 2)
    {
-      strcpy(objectiveNumStr, "Enriquecer como ninguém");
+      strcpy(objectiveNumStr, "enriquecer como ninguém");
    }else if (objectiveNum == 3)
    {
-      strcpy(objectiveNumStr,"Destruir a raiz do mal para todo o sempre");
+      strcpy(objectiveNumStr,"destruir a raiz do mal para todo o sempre");
    }
 
    if (originNum == 1)
@@ -262,7 +262,7 @@ int main()
    sleep(2);
    printf("\n\n%s, advindo de %s, não se acovarda e aproveita a oportunidade de %s, já que estava à toa em casa. ",charName, originNumStr,objectiveNumStr);
    sleep(2);
-   printf("Para isso, %s, que não é bobo nem nada, traça um plano: \"preciso, primeiro, catar minhas coisas\" ",charName);
+   printf("\nPara isso, %s, que não é bobo nem nada, traça um plano: \"preciso, primeiro, catar minhas coisas\" ",charName);
    sleep(2);
 
    pergunta1:
@@ -321,6 +321,7 @@ int main()
          printf("\n\nSua vida continua para o sucesso");
       }else if (strcmp(ladyChoice, "Chutar") == 0)
       {
+         printf("\n\n - AAAAAAAHHHHHHHH - diz a senhora, caindo no chão");
          printf("\n\n - QUE DELICIA CHUTAR ESSA VÉIA DESGRAÇADA");
       }
 return 0;
