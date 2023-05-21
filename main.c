@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <time.h>
 
 /*Variáveis Globais*/
    char charName[20], charBio[400];
@@ -256,18 +257,19 @@ int main()
    }
 
    /*Início do jogo*/
-   sleep(3);
+   sleep(1);
 
    printf("\n\nNo mundo de Flim Flam, onde reinos e criaturas fantásticas coexistem, surge uma ameaça sombria que promete\nmergulhar toda a terra na escuridão eterna. O mal se espalha lentamente, corrompendo a natureza, as almas\ne tudo o que toca. ");
-   sleep(2);
+   sleep(1);
    printf("\n\n%s, advindo de %s, não se acovarda e aproveita a oportunidade de %s, já que estava à toa em casa. ",charName, originNumStr,objectiveNumStr);
-   sleep(2);
+   sleep(1);
    printf("\nPara isso, %s, que não é bobo nem nada, traça um plano: \"preciso, primeiro, catar minhas coisas\" ",charName);
-   sleep(2);
+   sleep(1);
 
    pergunta1:
    printf("\n\n - O que eu preciso levar?\nEscolha:\nEscova de dentes\nÓculos escuros\nCopo Stanley\n(escreva exatamente como está escrito)");
    char carryOne[20];
+   clearBuffer();
    fgets(carryOne, 20, stdin);
    carryOne[strcspn(carryOne, "\n")] = '\0';
 
@@ -299,7 +301,7 @@ int main()
    }
       printf("\n - Continuarei minha jornada para %s, vou sair de casa.\n", objectiveNumStr);
       printf("\nSaindo de sua casa, %s se depara com uma senhora andando pela rua. Ela aparenta estar indo comprar mantimentos para sua pobre família.",charName);
-      printf("\n%scogita o que fazer à respeito da pobre senhora.",charName);
+      printf("\n%s cogita o que fazer à respeito da pobre senhora.",charName);
 
       char ladyChoice[20];
       
@@ -315,21 +317,83 @@ int main()
 
       if (strcmp(ladyChoice, "Dar bom dia para a senhora") == 0)
       {
-         printf("\n\nA senhora responde: Bom dia rapaz.");
+         printf("\n\nA senhora responde: Bom dia rapaz.\n");
       }else if (strcmp(ladyChoice, "Não fazer nada") == 0)
       {
-         printf("\n\nSua vida continua para o sucesso");
+         printf("\n\nSua vida continua para o sucesso\n");
       }else if (strcmp(ladyChoice, "Chutar") == 0)
       {
          printf("\n\n - AAAAAAAHHHHHHHH - diz a senhora, caindo no chão");
          printf("\n\n - QUE DELICIA CHUTAR ESSA VÉIA DESGRAÇADA");
       }
 
+   printf("depois de alguns minutos andando por ai, um estranho te chama para um grande duelo de jokempo\n");
+   int escolha, computador,recompensa,empate,perde;
+   loop5:
+   printf("qual é a sua escolha\n");
+   printf("1. pedra\n");
+   printf("2. papel\n");
+   printf("3. tesoura\n");
+   srand(time(NULL));
+   computador = rand() % 3 + 1;
+   scanf("%d",&escolha);
+   if(escolha > 3 || escolha < 1){
+      printf("opçao invalida\n");
+      goto loop5;
+   }
+   printf("o computador escolheu: %d\n",computador);
+      if(escolha == computador){
+      loop8:
+      printf("voces empataram, voce quer tentar ganhar ou deseja sair com um empate?\n");
+         printf("1. jogar novamente\n");
+         printf("2. sair\n");
+      scanf("%d",&empate);
+      if(empate == 1){
+         goto loop5;
+      }
+      else if(empate == 2){
+         printf("voce virou as costas e foi embora\n");
+      }
+      else if(empate > 2 || empate < 1){
+         printf("opçao invalida\n");
+         goto loop8;
+      }
+      }
+         else if(escolha == 1 && computador == 3 || escolha == 2 && computador == 1 || escolha == 3 && computador == 2){
+            loop6:
+            printf("Parabéns. Você ganhou.\n");
+            printf("Qual será sua recompensa?\n");
+            printf("1. Maça mordida\n");
+            printf("2. Vara de pesca sem linha\n");
+            printf("3. Havaianas estourada\n");
+            scanf("%d",&recompensa);
+            if(recompensa > 3 || recompensa < 1){
+            printf("opçao invalida\n");
+            goto loop6;
+            }
+            printf("voce pegou sua recompensa e continuou sua jornada\n");
+         }
+      else if(escolha == 1 && computador == 2 || escolha == 2 && computador == 3 || escolha == 3 && computador == 1){
+         loop7:
+         printf("voce perdeu, quer tentar novamente?\n");
+         printf("1. sim\n");
+         printf("2. nao\n");
+         scanf("%d",&perde);
+         if(perde == 1){
+            goto loop5;
+         }
+         else if(perde == 2){
+            printf("voce foi embora derrotado\n");
+         }
+         else if(perde > 2 || perde < 1){
+            printf("opçao invalida\n");
+            goto loop7;
+         }
+      }
 
 
 
+   return 0;
+   }
       
-return 0;
-}
-   
 
