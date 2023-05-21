@@ -324,6 +324,11 @@ int main()
          printf("\n\n - AAAAAAAHHHHHHHH - diz a senhora, caindo no chão");
          printf("\n\n - QUE DELICIA CHUTAR ESSA VÉIA DESGRAÇADA");
       }
+
+
+
+
+      
 return 0;
 }
    
