@@ -476,6 +476,7 @@ loop5:
          printf("Opção Inválida\n");
          goto loop7;
       }
+      
    }
    exit(0);
    return 0;
